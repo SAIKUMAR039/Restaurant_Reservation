@@ -6,7 +6,7 @@ import Menu from "@/pages/Menu";
 import Reservations from "@/pages/Reservations";
 import Contact from "@/pages/Contact";
 import AdminDashboard from "@/pages/AdminDashboard";
-import ManageReservations from "./pages/ManageReservations";
+import ManageReservations from "@/pages/ManageReservations";
 
 function App() {
   return (
