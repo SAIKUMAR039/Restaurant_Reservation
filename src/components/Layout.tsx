@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Utensils, Menu as MenuIcon, X } from 'lucide-react';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Utensils, Menu as MenuIcon, X } from "lucide-react";
+import { useState } from "react";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,7 +15,10 @@ export default function Layout({ children }: LayoutProps) {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container-custom">
           <div className="flex h-16 items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2 hover:opacity-90">
+            <Link
+              to="/"
+              className="flex items-center space-x-2 hover:opacity-90"
+            >
               <Utensils className="h-6 w-6" />
               <span className="text-xl font-bold">Fine Dining</span>
             </Link>
@@ -134,11 +137,20 @@ export default function Layout({ children }: LayoutProps) {
                 >
                   Twitter
                 </a>
+                <a
+                  href="/manage"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Manage
+                </a>
               </div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} Fine Dining. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Fine Dining. All rights
+              reserved.
+            </p>
           </div>
         </div>
       </footer>
