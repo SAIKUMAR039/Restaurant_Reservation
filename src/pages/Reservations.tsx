@@ -87,15 +87,6 @@ const ReservationForm = () => {
     },
   });
 
-  const formatTimeForEmail = (timeStr: string) => {
-    if (!timeStr || !timeStr.includes(":")) return timeStr;
-    const [hours, minutes] = timeStr.split(":");
-    const hour = parseInt(hours);
-    const ampm = hour >= 12 ? "PM" : "AM";
-    const hour12 = hour % 12 || 12;
-    return `${hour12}:${minutes} ${ampm}`;
-  };
-
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       setIsSubmitting(true);
@@ -108,7 +99,7 @@ const ReservationForm = () => {
       // Format the date to match Supabase's expected format
       const formattedDate = format(values.date, "yyyy-MM-dd");
 
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("reservations")
         .insert([
           {
